@@ -1,1 +1,40 @@
-Hello
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daf | Carte de visite</title>
+  <style>
+    body { margin:0; min-height:100vh; display:grid; place-items:center;
+           font-family:system-ui,sans-serif; background:#0f172a; color:#e2e8f0; }
+    .carte { width:min(90%,340px); padding:32px 24px; text-align:center;
+             background:#1e293b; border-radius:20px; }
+    a, button { display:block; width:100%; box-sizing:border-box; margin-top:12px;
+                padding:12px; border:0; border-radius:10px; font-size:1rem;
+                background:#38bdf8; color:#0f172a; text-decoration:none; cursor:pointer; }
+    a:hover, button:hover { opacity:.85; }
+  </style>
+</head>
+<body>
+  <main class="carte">
+    <h1>Daf</h1>
+    <p>Étudiant en L3 Développement d'Applications, ESAG-NDE</p>
+    <p>Lomé, Togo</p>
+
+    <button id="btn">En savoir plus</button>
+    <p id="bio" hidden>Passionné par le développement d'applications.</p>
+
+    <a href="https://github.com/TON-PSEUDO">Mon GitHub</a>
+    <a href="mailto:TON-EMAIL">Me contacter</a>
+  </main>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const bio = document.getElementById('bio');
+    btn.addEventListener('click', () => {
+      bio.hidden = !bio.hidden;
+      btn.textContent = bio.hidden ? 'En savoir plus' : 'Masquer';
+    });
+  </script>
+</body>
+</html>
